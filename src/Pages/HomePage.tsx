@@ -1,9 +1,17 @@
 import Header from "../Header/header";
+import DreamJob from "../LandingPage/DreamJob";
+import Companies from "../LandingPage/Companies";
+import NewJobCategory from "../LandingPage/NewJobCategory";
 
 const HomePage = () => {
-    return (
-        <Header />
-    );
+  return (
+    <div className="min-h-[100vh] bg-mine-shaft-900 font-[Poppins]">
+      <Header />
+      <DreamJob />
+      <Companies />
+      <NewJobCategory />
+    </div>
+  );
 };
 
 export default HomePage;
