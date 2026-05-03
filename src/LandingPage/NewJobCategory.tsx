@@ -1,3 +1,8 @@
+/**
+ * NewJobCategory Component
+ * Renders the "Explore Career Opportunities" section.
+ * Displays a headline, a subtitle, and a grid of job category cards (e.g., Digital Marketing).
+ */
 const NewJobCategory = () => {
   return (
     <div className="mt-20 pb-5">
