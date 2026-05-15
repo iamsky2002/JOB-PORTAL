@@ -40,16 +40,16 @@ export const jobCategory = [
 
 export const work = [
     {
-        name: "Build Your Resume",
-        desc: "Create a standout resume with your skills."
+        name: "Design Your Resume",
+        desc: "Create an ATS-friendly professional resume that highlights your skills and experience."
     },
     {
         name: "Apply for Job",
-        desc: "Find and apply for jobs that match your skills."
+        desc: "Discover and apply to opportunities that match your profile and skills."
     },
     {
-        name: "Get Hired",
-        desc: "Connect with employers and start your new job."
+        name: "Land Your Dream Job",
+        desc: "Connect directly with top recruiters and employers and start your career journey today."
     }
 ];
 
