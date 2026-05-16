@@ -5,6 +5,9 @@ import "@mantine/core/styles.css";
 // ‼️ import carousel styles after core package styles
 import "@mantine/carousel/styles.css";
 import HomePage from "./Pages/HomePage";
+import FindJobs from "./Pages/FindJobs";
+import Header from "./Header/header";
+import Footer from "./Footer/Footer";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -36,13 +39,20 @@ function App() {
         "#7a320d",
       ],
     },
+
+    fontFamily: "'Poppins', sans-serif",
   });
   return (
-    <MantineProvider theme={theme}>
+    <MantineProvider defaultColorScheme="dark" theme={theme}>
       <BrowserRouter>
-        <Routes>
-          <Route path="*" element={<HomePage />} />
-        </Routes>
+        <div className="min-h-[100vh] bg-mine-shaft-900 font-[Poppins]">
+          <Header />
+          <Routes>
+            <Route path="/find-jobs" element={<FindJobs />} />
+            <Route path="*" element={<HomePage />} />
+          </Routes>
+          <Footer />
+        </div>
       </BrowserRouter>
     </MantineProvider>
   );
