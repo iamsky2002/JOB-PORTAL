@@ -3,7 +3,29 @@
  * Contains arrays of data (companies, job categories, work items)
  * used throughout the application to render dynamic UI elements.
  */
-export const companies = [
+
+// TypeScript interfaces — these tell the compiler the exact shape of each data object
+interface JobCategory {
+  name: string;
+  desc: string;
+  jobs: string;
+}
+interface WorkStep {
+  name: string;
+  desc: string;
+}
+interface Testimonial {
+  name: string;
+  testimonial: string;
+  rating: number;
+  avatar: string;
+}
+interface FooterLink {
+  title: string;
+  link: string[];
+}
+
+export const companies: string[] = [
   "Google",
   "Amazon",
   "Figma",
@@ -98,6 +120,9 @@ export const testimonials = [
 
 export const footerLinks = [
   { title: "Product", link: ["Find Job", "Find Company", "Find Employee"] },
-  { title: "Company", link: ["About Us", "Contact Us", "Privacy Policy", "Terms & Conditions"] },
-  { title: "Support", link: ["Help & Support", "Feedback", "FAQs"] }
+  {
+    title: "Company",
+    link: ["About Us", "Contact Us", "Privacy Policy", "Terms & Conditions"],
+  },
+  { title: "Support", link: ["Help & Support", "Feedback", "FAQs"] },
 ];

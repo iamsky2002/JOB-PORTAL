@@ -1,5 +1,5 @@
 import {
-  IconAnchor,
+  IconChefHatFilled,
   IconBrandFacebook,
   IconBrandInstagram,
   IconBrandX,
@@ -11,7 +11,7 @@ const Footer = () => {
     <div className="mt-20 pb-5 flex gap-5 justify-around">
       <div className="w-1/4 flex flex-col gap-4">
         <div className="flex gap-1 items-center text-bright-sun-400">
-          <IconAnchor className="h-6 w-6" stroke={2.5} />
+          <IconChefHatFilled className="h-6 w-6" stroke={2.5} />
           <div className="text-xl font-semibold">JobHook</div>
         </div>
         <div className="text-sm text-mine-shaft-300">
@@ -36,7 +36,7 @@ const Footer = () => {
           <div className="text-lg font-semibold mb-4 text-bright-sun-400">
             {item.title}
           </div>
-          {item.link.map((link, index) => (
+          {item.link.map((link: string, index: number) => (
             <div
               key={index}
               className="text-mine-shaft-300 text-sm hover:text-bright-sun-400 cursor-pointer mb-1 hover:translate-x-2 transition-all duration-300"

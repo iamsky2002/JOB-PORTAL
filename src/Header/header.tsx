@@ -10,7 +10,7 @@ const Header = () => {
     >
       <div className="flex gap-2 items-center text-bright-sun-300">
         <IconChefHatFilled className="h-9 w-10" stroke={1.25} />
-        <div className="text-3xl">JobHooks</div>
+        <div className="text-3xl">JobHook</div>
       </div>
       <NavLinks />
       <div className="flex items-center gap-2">

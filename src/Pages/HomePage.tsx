@@ -7,7 +7,7 @@ import Subscribe from "../LandingPage/Subscribe";
 
 const HomePage = () => {
   return (
-    <div className="min-h-[100vh] bg-mine-shaft-900 font-[Poppins]">
+    <div>
       <DreamJob />
       <Companies />
       <NewJobCategory />

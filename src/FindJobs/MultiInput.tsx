@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Checkbox,
   Combobox,
@@ -9,23 +9,25 @@ import {
 } from "@mantine/core";
 import { IconSearch } from "@tabler/icons-react";
 
-const groceries = [
-  "🍎 Apples",
-  "🍌 Bananas",
-  "🥦 Broccoli",
-  "🥕 Carrots",
-  "🍫 Chocolate",
-];
+interface MultiInputProps {
+  title: string;
+  icon: any;
+  options: string[];
+}
 
-const MultiInput = () => {
+const MultiInput = (props: MultiInputProps) => {
   const combobox = useCombobox({
     onDropdownClose: () => combobox.resetSelectedOption(),
     onDropdownOpen: () => combobox.updateSelectedOptionIndex("active"),
   });
 
   const [search, setSearch] = useState("");
-  const [data, setData] = useState(groceries);
+  const [data, setData] = useState<string[]>([]);
   const [value, setValue] = useState<string[]>([]);
+  
+  useEffect(() => {
+    setData(props.options);
+  }, [props.options]);
 
   const exactOptionMatch = data.some((item) => item === search);
 
@@ -101,7 +103,7 @@ const MultiInput = () => {
           onClick={() => combobox.openDropdown()}
           leftSection={
             <div className="flex items-center gap-2">
-              <IconSearch size={25} className="text-bright-sun-400" />
+              <props.icon size={25} className="text-bright-sun-400" />
               <div className="border-l border-mine-shaft-600 h-6"></div>
             </div>
           }
@@ -115,7 +117,7 @@ const MultiInput = () => {
                 variant="unstyled"
                 onFocus={() => combobox.openDropdown()}
                 value=""
-                placeholder={value.length === 0 ? "Search Jobs Title..." : ""}
+                placeholder={value.length === 0 ? props.title : ""}
                 readOnly
                 onChange={() => {}}
                 onKeyDown={(event) => {
@@ -134,7 +136,7 @@ const MultiInput = () => {
         <Combobox.Search
           value={search}
           onChange={(event) => setSearch(event.currentTarget.value)}
-          placeholder="Search groceries"
+          placeholder={`Search ${props.title}`}
           className="border-b border-mine-shaft-600"
         />
         <Combobox.Options>

@@ -11,7 +11,7 @@ const Testimonials = () => {
         {
           testimonials.map((data, index)=><div key={index} className="flex flex-col gap-3 w-[23%] border-bright-sun-400 p-3 border rounded-xl mt-10">
             <div className="flex gap-2 items-center">
-              <Avatar className="!h-14 !w-14" src={data.avatar} alt="it's me" />
+              <Avatar className="!h-14 !w-14" src={data.avatar} alt={data.name} />
               <div>
                 <div className="text-lg text-mine-shaft-100 font-semibold">{data.name}</div>
                 <Rating value={data.rating} fractions={2} readOnly />
