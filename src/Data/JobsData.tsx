@@ -7,95 +7,102 @@ const dropdownData = [
     { title: "Job Type", icon: IconRecharging, options: ['Full Time', 'Part Time', 'Contract', 'Freelance', 'Internship'] }
 ];
 
+const searchFields = [
+    { title: "Skills", icon: IconSearch, options: ['React', 'Python', 'Java', 'Node.js', 'TypeScript', 'AWS', 'Docker', 'Kubernetes', 'Machine Learning', 'Figma'] },
+    { title: "Experience", icon: IconBriefcase, options: ['0-1 Years', '1-3 Years', '3-5 Years', '5-8 Years', '8+ Years'] },
+    { title: "Location", icon: IconMapPin, options: ['Delhi', 'Bangalore', 'Mumbai', 'Remote', 'New York', 'San Francisco', 'London', 'Toronto'] },
+    { title: "Job Type", icon: IconRecharging, options: ['Full Time', 'Part Time', 'Contract', 'Freelance', 'Internship'] }
+];
+
 const jobList = [
     {
-      jobTitle: "Product Designer",
+      jobTitle: "Software Engineer, AR/VR",
       company: "Meta",
-      applicants: 25,
-      experience: "Entry Level",
-      jobType: "Full-Time",
-      location: "New York",
-      package: "32 LPA",
-      postedDaysAgo: 12,
-      description: "Meta is seeking a Product Designer to join our team. You'll be working on designing user-centric interfaces for our blockchain wallet platform. This is an excellent opportunity for entry-level designers to grow their skills in a dynamic environment."
+      applicants: 120,
+      experience: "Expert",
+      jobType: "Full Time",
+      location: "Menlo Park",
+      package: "45 LPA",
+      postedDaysAgo: 2,
+      description: "Join Reality Labs to build the future of immersive interfaces. You'll architect high-performance C++ systems for the next generation of VR headsets, ensuring a seamless metaverse experience with ultra-low latency."
     },
     {
-      jobTitle: "Sr. UX Designer",
+      jobTitle: "Machine Learning Engineer",
       company: "Netflix",
-      applicants: 14,
-      experience: "Expert",
-      jobType: "Part-Time",
-      location: "San Francisco",
-      package: "40 LPA",
-      postedDaysAgo: 5,
-      description: "Netflix is looking for a Sr. UX Designer to enhance our user experience on streaming platforms. Ideal candidates will have extensive experience in user research and interaction design, helping us to deliver engaging content to our global audience."
-    },
-    {
-      jobTitle: "Product Designer",
-      company: "Microsoft",
-      applicants: 58,
+      applicants: 85,
       experience: "Intermediate",
-      jobType: "Full-Time",
-      location: "Remote",
-      package: "35 LPA",
-      postedDaysAgo: 4,
-      description: "Join Microsoft as a Product Designer and contribute to our new Lightspeed LA studio. We're looking for designers who can create intuitive and compelling gaming experiences. This is a remote position, offering flexibility and the opportunity to work with a leading technology company."
-    },
-    {
-      jobTitle: "Product Designer",
-      company: "Adobe",
-      applicants: 23,
-      experience: "Expert",
-      jobType: "Part-Time",
-      location: "Toronto",
-      package: "33 LPA",
-      postedDaysAgo: 22,
-      description: "Adobe is seeking a part-time Product Designer to help us enhance our user experience. You will work closely with our team to design features that make our platform more engaging and user-friendly. This role is perfect for experienced designers looking for flexible work hours."
-    },
-    {
-      jobTitle: "Backend Developer",
-      company: "Google",
-      applicants: 21,
-      experience: "Entry Level",
-      jobType: "Full-Time",
-      location: "Bangalore",
+      jobType: "Full Time",
+      location: "Los Gatos",
       package: "38 LPA",
-      postedDaysAgo: 8,
-      description: "Google is hiring a Backend Developer to join our team in Bangalore. You'll be responsible for developing scalable backend systems that power our services. This role requires strong problem-solving skills and experience with modern backend technologies."
+      postedDaysAgo: 5,
+      description: "Help shape what millions watch every day. You'll develop scalable ML pipelines to refine our recommendation algorithms, driving viewer engagement through deeply personalized content delivery."
     },
     {
-      jobTitle: "SMM Manager",
-      company: "Spotify",
-      applicants: 73,
-      experience: "Intermediate",
-      jobType: "Full-Time",
-      location: "Delhi",
-      package: "34 LPA",
-      postedDaysAgo: 8,
-      description: "Spotify is looking for an SMM Manager to lead our social media marketing efforts in Delhi. You will create and manage campaigns to promote our music streaming service, engage with our audience, and drive growth. This role is ideal for creative marketers with a passion for music."
-    },
-    {
-      jobTitle: "Frontend Developer",
-      company: "Amazon",
-      applicants: 50,
-      experience: "Intermediate",
-      jobType: "Full-Time",
-      location: "Seattle",
-      package: "36 LPA",
-      postedDaysAgo: 10,
-      description: "Amazon is looking for a Frontend Developer to build and maintain our customer-facing applications. You will work with a dynamic team to create seamless and responsive web applications."
-    },
-    {
-      jobTitle: "iOS Developer",
-      company: "Apple",
-      applicants: 30,
+      jobTitle: "Cloud Solutions Architect",
+      company: "Microsoft",
+      applicants: 42,
       experience: "Expert",
-      jobType: "Full-Time",
-      location: "Cupertino",
+      jobType: "Remote",
+      location: "Seattle",
+      package: "40 LPA",
+      postedDaysAgo: 4,
+      description: "Lead the technical vision for enterprise clients migrating to Azure. You will design resilient, scalable cloud architectures, specializing in Kubernetes and distributed microservices for global platforms."
+    },
+    {
+      jobTitle: "Principal UX Researcher",
+      company: "Adobe",
+      applicants: 60,
+      experience: "Expert",
+      jobType: "Full Time",
+      location: "San Jose",
+      package: "35 LPA",
+      postedDaysAgo: 12,
+      description: "Drive the creative suite's future by leading generative AI usability studies. Collaborate directly with design leaders to synthesize quantitative and qualitative data into actionable, user-centric product features."
+    },
+    {
+      jobTitle: "Data Scientist, Search",
+      company: "Google",
+      applicants: 200,
+      experience: "Intermediate",
+      jobType: "Full Time",
+      location: "Mountain View",
+      package: "39 LPA",
+      postedDaysAgo: 1,
+      description: "Dive into the world's largest datasets. You will apply advanced statistical modeling and natural language processing techniques to improve the relevance, speed, and accuracy of Google Search results globally."
+    },
+    {
+      jobTitle: "iOS Mobile Architect",
+      company: "Spotify",
+      applicants: 45,
+      experience: "Expert",
+      jobType: "Full Time",
+      location: "Stockholm",
       package: "42 LPA",
+      postedDaysAgo: 8,
+      description: "Architect robust, scalable iOS solutions for the world's leading audio platform. You will focus on audio playback optimization, memory management, and crafting buttery-smooth UI interactions in Swift."
+    },
+    {
+      jobTitle: "Technical Program Manager",
+      company: "Amazon",
+      applicants: 90,
+      experience: "Expert",
+      jobType: "Full Time",
+      location: "Austin",
+      package: "48 LPA",
+      postedDaysAgo: 10,
+      description: "Lead cross-functional engineering teams to launch massive supply chain innovations. You'll own the end-to-end delivery of complex fulfillment systems, managing risks and scaling logistics operations globally."
+    },
+    {
+      jobTitle: "Graphics Programmer",
+      company: "Apple",
+      applicants: 34,
+      experience: "Intermediate",
+      jobType: "Full Time",
+      location: "Cupertino",
+      package: "36 LPA",
       postedDaysAgo: 7,
-      description: "Apple is seeking an iOS Developer to join our team in Cupertino. You will work on developing cutting-edge applications for iOS devices, ensuring high performance and an exceptional user experience."
+      description: "Push the boundaries of Apple Silicon. You will optimize the Metal graphics framework, ensuring game developers and professional creators can maximize GPU performance across both macOS and iOS devices."
     }
   ];
 
-  export {dropdownData,jobList};
+  export {dropdownData, searchFields, jobList};

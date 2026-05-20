@@ -7,7 +7,6 @@ import {
   PillsInput,
   useCombobox,
 } from "@mantine/core";
-import { IconSearch } from "@tabler/icons-react";
 
 interface MultiInputProps {
   title: string;
@@ -83,6 +82,7 @@ const MultiInput = (props: MultiInputProps) => {
             onChange={() => {}}
             aria-hidden
             tabIndex={-1}
+            color="green"
             style={{ pointerEvents: "none" }}
           />
           <span>{item}</span>
@@ -139,7 +139,7 @@ const MultiInput = (props: MultiInputProps) => {
           placeholder={`Search ${props.title}`}
           className="border-b border-mine-shaft-600"
         />
-        <Combobox.Options>
+        <Combobox.Options style={{ maxHeight: 200, overflowY: "auto" }}>
           {options}
 
           {!exactOptionMatch && search.trim().length > 0 && (

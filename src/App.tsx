@@ -3,6 +3,8 @@ import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
 import HomePage from "./Pages/HomePage";
 import FindJobs from "./Pages/FindJobs";
+import FindTalentPage from "./Pages/FindTalentPage";
+import TalentProfilePage from "./Pages/TalentProfilePage";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -41,11 +43,13 @@ function App() {
   return (
     <MantineProvider defaultColorScheme="dark" theme={theme}>
       <BrowserRouter>
-        <div className="min-h-[100vh] bg-mine-shaft-900 font-[Poppins] flex flex-col relative">
+        <div className="min-h-[100vh] bg-mine-shaft-950 font-[Poppins] flex flex-col relative">
           <Header />
           <div className="flex-grow">
             <Routes>
               <Route path="/find-jobs" element={<FindJobs />} />
+              <Route path="/find-talent" element={<FindTalentPage />} />
+              <Route path="/talent-profile" element={<TalentProfilePage />} />
               <Route path="*" element={<HomePage />} />
             </Routes>
           </div>

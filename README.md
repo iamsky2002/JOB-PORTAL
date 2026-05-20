@@ -23,6 +23,8 @@ where job seekers can explore opportunities, browse companies, and connect with 
 
 `🟢 Frontend — Complete` &nbsp;&nbsp; `🟡 Backend (Spring Boot + MongoDB) — In Progress` &nbsp;&nbsp; `⚪ Deployment — Pending`
 
+> 🆕 **Latest Update (May 2026):** Interactive Candidate Profile Page (`/talent-profile`) fully built with dynamic routing, dynamic expected CTC data, and responsive save heart toggles (utilizing state-driven red fill micro-animations). Modular [ExpCard](file:///c:/Users/sumit/Desktop/job-portal/src/TalentProfile/ExpCard.tsx) and [CertifiCard](file:///c:/Users/sumit/Desktop/job-portal/src/TalentProfile/CertifiCard.tsx) components integrated to render experience & credentials dynamically.
+
 <br/>
 
 [Features](#-whats-built-so-far) · [Tech Stack](#-tech-stack) · [Quick Start](#-quick-start) · [Project Structure](#-project-structure) · [Roadmap](#-development-roadmap)
@@ -68,7 +70,7 @@ Custom mine-shaft & bright-sun<br/>dual color palette
 <br/>
 🧩
 <br/><br/>
-<b>14 Components</b>
+<b>19 Components</b>
 <br/>
 Modular architecture with<br/>clean separation of concerns
 <br/><br/>
@@ -84,7 +86,7 @@ Modular architecture with<br/>clean separation of concerns
 
 ## 🖥️ What's Built So Far
 
-> The frontend is **fully functional** with 2 routed pages, 14 components, 8 data modules, and 30+ static assets.
+> The frontend is **fully functional** with **3 routed pages**, **19 components**, **8 data modules**, and **40+ static assets**.
 
 <br/>
 
@@ -105,20 +107,59 @@ The landing page is assembled from **6 independent sections**, each its own comp
 
 ### 🔍 Find Jobs Page — `/find-jobs`
 
-Currently features the **search/filter bar** with 3 multi-select dropdowns:
+Features the **search/filter bar** with 3 multi-select dropdowns and a **salary range slider**, plus a full **job listings grid**:
 
 | Filter | Options Available |
 |--------|-------------------|
 | 🔍 Job Title | Designer, Developer, Product Manager, Marketing Specialist, Data Analyst, Sales Executive, Content Writer, Customer Support |
 | 📍 Location | Delhi, New York, San Francisco, London, Berlin, Tokyo, Sydney, Toronto |
 | 💼 Experience | Entry Level, Intermediate, Expert |
+| 💰 Salary Range | Slider from ₹0 LPA to ₹150 LPA |
 
-Each filter uses a custom-built `MultiInput` combobox (110+ lines) featuring:
+The filter uses the shared `MultiInput` combobox from `src/Components/` featuring:
 - Searchable dropdown with checkbox selection
 - Selected items shown as **removable pill tags** (max 2 visible + "+N more" badge)
 - **"+ Create"** option to add custom values on the fly
 - Keyboard support (Backspace to remove last pill)
 - Dark-themed dropdown with border & shadow styling
+
+Job listings grid renders **8 job cards** (Meta, Netflix, Microsoft, Adobe, Google, Spotify, Amazon, Apple) with sortable options (Relevance, Most Recent, Salary High/Low).
+
+<br/>
+
+### 🎯 Find Talent Page — `/find-talent` 🆕
+
+> Fully functional candidate browsing page with search filters and talent cards.
+
+Features the **talent search bar** with 3 talent-specific multi-select filters plus a **salary range slider**:
+
+| Filter | Options Available |
+|--------|-------------------|
+| 🔍 Job Title | Designer, Developer, Product Manager, Data Analyst, Sales Executive, Content Writer, Customer Support |
+| 📍 Location | Delhi, New York, San Francisco, London, Berlin, Tokyo, Sydney, Toronto |
+| 🛠 Skills | HTML, CSS, JavaScript, React, Angular, Node.js, Python, Java, SQL, MongoDB, AWS, Docker, and more |
+| 💰 Expected CTC | Slider from ₹0 LPA to ₹150 LPA |
+
+Talent grid renders **9 candidate cards**, each showing:
+- Avatar image, Name, Role, Company
+- About paragraph (clamped to 3 lines)
+- Top skills as **yellow badge chips**
+- Location with map-pin icon
+- Expected CTC range
+
+<br/>
+
+### 👤 Candidate Profile Page — `/talent-profile` 🆕
+
+> Fully interactive candidate profile page with route-state-driven dynamic data rendering.
+
+Features:
+* **Interactive Candidate Cards**: Clicking a candidate's Avatar or Name/Role details in `TalentCard` instantly navigates to their profile page.
+* **Interactive Save/Favorite**: Clicking the Heart icon on any candidate card toggles its "Saved" state dynamically between outline-gray and solid glowing red (`fill="red"`) with smooth state transitions.
+* **Dynamic Experience & Certifications**: Maps professional details dynamically into dedicated, clean [ExpCard](file:///c:/Users/sumit/Desktop/job-portal/src/TalentProfile/ExpCard.tsx) and [CertifiCard](file:///c:/Users/sumit/Desktop/job-portal/src/TalentProfile/CertifiCard.tsx) components.
+* **Dynamic Expected CTC**: Renders candidate-specific expected salary figures inside the profile view.
+* **Intelligent Routing State & Fallback**: Fetches specific candidate credentials via React Router route state. If visited directly, it seamlessly falls back to the default profile from `TalentData.tsx`.
+
 
 <br/>
 
@@ -128,7 +169,7 @@ Each filter uses a custom-built `MultiInput` combobox (110+ lines) featuring:
 |-----------|---------|
 | **Header** | Brand logo ("JobHook" with chef-hat icon), 4 nav links (Find Jobs, Find Talent, Upload Job, About Us) with **active-route border highlighting**, user avatar, settings gear, and animated notification bell with a pulsing indicator |
 | **Footer** | Brand + tagline, 3 link columns (Product: 3 links, Company: 4 links, Support: 3 links), social icons (Facebook, Instagram, X) with hover scale + color animations |
-| **Routing** | React Router v7 — `/find-jobs` route is live, `/*` catches everything else to HomePage |
+| **Routing** | React Router v7 — `/find-jobs`, `/find-talent`, `/talent-profile` routes live, `/*` catches everything else to HomePage |
 
 <br/>
 
@@ -141,15 +182,15 @@ These data files are **already written** and waiting for their corresponding pag
 
 <br/>
 
-| Data File | What It Contains | Planned Page |
+| Data File | What It Contains | Status |
 |-----------|-----------------|--------------|
-| `JobsData.tsx` | **8 detailed job listings** — Meta, Netflix, Microsoft, Adobe, Google, Spotify, Amazon, Apple — with title, location, salary, experience, applicant count, and full description paragraphs | Job Listings Grid |
-| `JobDescData.tsx` | Single job detail card (Location, Experience, Salary, Job Type icons), 9 skill tags, and a full HTML job description with About/Responsibilities/Qualifications sections | Job Detail Page |
-| `TalentData.tsx` | **8 candidate profiles** — Jarrod Wood (Google), Alice Johnson (Facebook), Bob Smith (Amazon), Diana Prince (Adobe), Charlie Brown (Microsoft), Fiona Gallagher (Netflix), Ethan Hunt (IBM), Helen Mirren (Apple) — each with role, skills, about paragraph, expected CTC, location. Also includes a **detailed profile** with work experience (2 entries), skills list (15 skills), and certifications (2 certs) | Find Talent Page |
-| `Company.tsx` | Google company profile (overview, industry, website, size, HQ, 8 specialties) + 8 similar companies with employee counts (Meta, Netflix, Microsoft, Adobe, Google, Spotify, Amazon, Apple) | Company Profile Page |
-| `Profile.tsx` | User profile form fields — Job Title, Company, Location — with dropdown options and pre-filled values | User Profile Page |
-| `PostJob.tsx` | Job posting form with 6 fields (Job Title, Company, Experience, Job Type, Location, Salary) + HTML template for job description editor | Post a Job Page |
-| `PostedJob.tsx` | **10 active job postings** + **3 draft postings** with titles, locations, and posted dates | Employer Dashboard |
+| `JobsData.tsx` | **8 detailed job listings** — Meta, Netflix, Microsoft, Adobe, Google, Spotify, Amazon, Apple — with title, location, salary, experience, applicant count, and full description paragraphs | ✅ UI Built |
+| `TalentData.tsx` | **9 candidate profiles** — Jarrod Wood (Google), Alice Johnson (Facebook), Bob Smith (Amazon), Diana Prince (Adobe), Charlie Brown (Microsoft), Fiona Gallagher (Netflix), Ethan Hunt (IBM), Helen Mirren (Apple), George Lucas (Cisco) — each with role, skills, about, expected CTC, location. Also includes a **detailed profile** with work experience (2 entries), 15 skills, and 2 certifications | ✅ UI Built |
+| `JobDescData.tsx` | Single job detail card (Location, Experience, Salary, Job Type icons), 9 skill tags, and a full HTML job description with About/Responsibilities/Qualifications sections | ⏳ Planned |
+| `Company.tsx` | Google company profile (overview, industry, website, size, HQ, 8 specialties) + 8 similar companies with employee counts | ⏳ Planned |
+| `Profile.tsx` | User profile form fields — Job Title, Company, Location — with dropdown options and pre-filled values | ⏳ Planned |
+| `PostJob.tsx` | Job posting form with 6 fields (Job Title, Company, Experience, Job Type, Location, Salary) + HTML template for job description editor | ⏳ Planned |
+| `PostedJob.tsx` | **10 active job postings** + **3 draft postings** with titles, locations, and posted dates | ⏳ Planned |
 
 </details>
 
@@ -195,6 +236,43 @@ public/
 | **Icons** | Tabler Icons React | 3.41 | 20+ icons used across header, footer, filters, cards |
 | **Font** | Poppins | — | Loaded via Google Fonts CDN in `index.html` |
 | **Build Tool** | Create React App | 5.0 | Webpack bundling, dev server, hot reload |
+
+<br/>
+
+### 📊 Architectural Distribution & Library Utilization
+
+To keep this project highly modular, robust, and scalable, the frontend codebase is architected with a strict mathematical balance between **framework logic**, **utility-first styling**, and **pre-built interactive UI widgets**. 
+
+Below is the structured distribution of the frontend technologies, including the rational logic behind the utilization percentages:
+
+#### 💻 1. Core Languages
+*Calculated based on raw file volume and type safety declarations in the `/src` and `/public` directories.*
+
+| Language | Distribution | Engineering Rationale & Logic |
+| :--- | :---: | :--- |
+| **TypeScript / TSX (React)** | **`90%`** | Renders all interactive view components, route specifications, state hooks, and strict interface models to prevent runtime errors. |
+| **CSS / PostCSS** | **`8%`** | Manages standard tailwind base styles and manual override classes in `index.css`. |
+| **HTML** | **`2%`** | Standard single-page-application (SPA) skeleton mount point inside `index.html`. |
+
+#### 🛠️ 2. Core UI & Styling Technologies
+*Calculated based on UI rendering power and style management surface area.*
+
+| Technology | Utilization | Architectural Logic |
+| :--- | :---: | :--- |
+| **React (v18+)** | **`50%`** | Acts as the operational core. Manages hooks (`useState`, `useEffect`), props communication, component assembly, and navigation parameters. |
+| **Tailwind CSS** | **`35%`** | Styling engine. Eliminates bulky custom stylesheet files and accelerates responsive formatting using fast Utility classes. |
+| **Mantine UI** | **`15%`** | Widget provider. Supplies heavy UI structures (Avatars, Badge pills, Combobox dropdowns, and form fields) to speed up UI consistency. |
+
+#### 📦 3. Key Library Weights
+*Calculated based on imported features and their functional contribution to the user experience.*
+
+| Library | Functional Weight | Architectural Role |
+| :--- | :---: | :--- |
+| **React Router DOM** | **`45%`** | Manages application-wide URL states, active tab borders, dynamic routing, and deep-link payload passes. |
+| **Tabler Icons React** | **`35%`** | Visual guide. Provides all premium vectors (hearts, coins, map pins) that give the portal its premium aesthetic. |
+| **Mantine Core & Carousel** | **`20%`** | Standardized widgets and interactive sliding carousels for seamless UX components. |
+
+<br/>
 
 ### Backend *(In Progress)*
 
@@ -259,6 +337,7 @@ job-portal/
 ├── public/                          → Static assets served directly
 │   ├── Category/                    → 10 job category icon PNGs
 │   ├── Companies/                   → 12 company logo PNGs
+│   ├── Icons/                       → 8 small company logo PNGs (for job cards)  🆕
 │   ├── Working/                     → Girl illustration + 3 step icons
 │   ├── avatar-1.png … avatar-4.png  → User avatars
 │   ├── newboy.png                   → Hero illustration
@@ -270,9 +349,13 @@ job-portal/
 │   ├── index.tsx                    → ReactDOM.createRoot entry point
 │   ├── index.css                    → Tailwind directives (@base, @components, @utilities)
 │   │
+│   ├── Components/                  → 🆕 Shared reusable components
+│   │   └── MultiInput.tsx           → Custom multi-select combobox (used by FindJobs & FindTalent)
+│   │
 │   ├── Pages/                       → Route-level page components
 │   │   ├── HomePage.tsx             → Assembles 6 landing page sections
-│   │   └── FindJobs.tsx             → Search filter page (SearchBar component)
+│   │   ├── FindJobs.tsx             → Job search page (SearchBar + Jobs)
+│   │   └── FindTalentPage.tsx       → 🆕 Talent browse page (SearchBar + Talents)
 │   │
 │   ├── LandingPage/                 → Individual homepage sections
 │   │   ├── DreamJob.tsx             → Hero — headline, search inputs, floating cards
@@ -283,8 +366,15 @@ job-portal/
 │   │   └── Subscribe.tsx            → Email subscription CTA
 │   │
 │   ├── FindJobs/                    → Job search components
-│   │   ├── SearchBar.tsx            → Filter bar layout (renders 3 MultiInputs)
-│   │   └── MultiInput.tsx           → Custom multi-select combobox (reusable)
+│   │   ├── SearchBar.tsx            → Filter bar with dropdowns + salary slider
+│   │   ├── JobCard.tsx              → Individual job listing card
+│   │   ├── Jobs.tsx                 → Job grid with sort functionality
+│   │   └── Sort.tsx                 → Sort dropdown (Relevance / Recent / Salary)
+│   │
+│   ├── FindTalent/                  → 🆕 Talent search components
+│   │   ├── SearchBar.tsx            → Filter bar with talent-specific dropdowns
+│   │   ├── TalentCard.tsx           → 🆕 Individual candidate card
+│   │   └── Talents.tsx              → 🆕 Talent grid (renders 9 TalentCards)
 │   │
 │   ├── Header/
 │   │   ├── Header.tsx               → Top nav — brand, user controls, notification bell
@@ -297,7 +387,7 @@ job-portal/
 │       ├── Data.tsx                 → companies, jobCategory, work, testimonials, footerLinks
 │       ├── JobsData.tsx             → dropdownData + jobList (8 job listings)
 │       ├── JobDescData.tsx          → Job detail card fields + skills + HTML description
-│       ├── TalentData.tsx           → searchFields + talents (8 profiles) + detailed profile
+│       ├── TalentData.tsx           → searchFields + talents (9 profiles) + detailed profile
 │       ├── Company.tsx              → companyData (Google) + similar companies (8)
 │       ├── Profile.tsx              → User profile form field definitions
 │       ├── PostJob.tsx              → Job posting form fields + description template
@@ -377,8 +467,14 @@ App opens at **[http://localhost:3000](http://localhost:3000)** — hot-reload i
 - [x] Route-aware header navigation with active highlighting
 - [x] Footer with 3 link columns & animated social icons
 - [x] Custom dark theme with Tailwind + Mantine dual registration
-- [x] 8 data modules with TypeScript interfaces (ready for UI)
-- [x] 33 static image assets organized across 3 directories
+- [x] 8 data modules with TypeScript interfaces
+- [x] 40+ static image assets organized across 4 directories
+- [x] Find Jobs page — 8 job cards + sort functionality (Relevance / Recent / Salary)
+- [x] Find Talent page — 9 candidate cards with skills, CTC, location 🆕
+- [x] Shared `Components/` folder — `MultiInput` reused across both search pages 🆕
+- [x] Salary range slider on both Find Jobs & Find Talent search bars 🆕
+- [x] Candidate profile detail page `/talent-profile` with dynamic routing, route state integration, dynamic experience, and certifications lists 🆕
+- [x] 4 fully routed pages (`/`, `/find-jobs`, `/find-talent`, `/talent-profile`) 🆕
 
 ### 🔨 Phase 2 — Backend with Java + Spring Boot + MongoDB (In Progress)
 
@@ -397,11 +493,10 @@ App opens at **[http://localhost:3000](http://localhost:3000)** — hot-reload i
 
 ### 🔮 Phase 3 — Full Feature Set & Deployment
 
-- [ ] Job detail page (data model already exists)
-- [ ] Talent browse page (8 profiles ready in data)
+- [ ] Job detail page (data model already exists in `JobDescData.tsx`)
 - [ ] Company profile page (Google data + 8 similar companies ready)
-- [ ] Post a job form (form fields + HTML template ready)
-- [ ] Employer dashboard (10 active + 3 draft postings ready)
+- [ ] Post a job form (form fields + HTML template ready in `PostJob.tsx`)
+- [ ] Employer dashboard (10 active + 3 draft postings ready in `PostedJob.tsx`)
 - [ ] Responsive breakpoints for mobile & tablet
 - [ ] Dark / Light theme toggle
 - [ ] Real-time notifications

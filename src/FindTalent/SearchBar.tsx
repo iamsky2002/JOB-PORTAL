@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { RangeSlider } from "@mantine/core";
+import { Input, RangeSlider } from "@mantine/core";
+import { IconUserCircle } from "@tabler/icons-react";
 import MultiInput from "../Components/MultiInput";
-import { dropdownData } from "../Data/JobsData";
+import { searchFields } from "../Data/TalentData";
 
 const SearchBar = () => {
   const [salaryRange, setSalaryRange] = useState<[number, number]>([3, 81]);
@@ -9,8 +10,20 @@ const SearchBar = () => {
   return (
     <div className="bg-mine-shaft-900 border-b border-mine-shaft-700 sticky top-0 z-10 shadow-md shadow-mine-shaft-950">
       <div className="flex items-center px-6 py-4 gap-3">
+        {/* Talent Name Input */}
+        <div className="flex items-center bg-mine-shaft-800 border border-mine-shaft-600 rounded-xl px-2 py-2 flex-1 min-w-0 focus-within:border-bright-sun-400 transition-all duration-300">
+          <div className="flex items-center gap-2">
+            <IconUserCircle size={25} className="text-bright-sun-400" />
+            <div className="border-l border-mine-shaft-600 h-6" />
+          </div>
+          <Input
+            className="[&_input]:!placeholder-mine-shaft-400 flex-1"
+            variant="unstyled"
+            placeholder="Talent Name"
+          />
+        </div>
         {/* 4 Dropdown Filters */}
-        {dropdownData.map((item, index) => (
+        {searchFields.map((item, index) => (
           <div key={index} className="flex-1 min-w-0">
             <MultiInput {...item} />
           </div>
