@@ -20,6 +20,9 @@ A responsive job board where candidates can find jobs and employers can find tal
 
 ---
 
+## 💡 Why I Built This
+I built this project to challenge myself with a full-stack application that goes beyond a simple CRUD app. I wanted to learn how to properly structure a React frontend with a premium UI (mixing Tailwind and Mantine) and connect it to a robust Java Spring Boot backend. My goal was to build something that looks and feels like a real product that users would actually want to interact with.
+
 ## ⚡ Project Highlights
 - **React 19 & TypeScript**: Built with functional components, hooks, and static typing.
 - **Dark Mode UI**: Custom design using Tailwind CSS and Mantine UI components.
@@ -124,6 +127,12 @@ src/
    npm start
    ```
    Open `http://localhost:3000` to view it in the browser.
+
+## 🧠 Challenges & What I Learned
+Building this wasn't without its hurdles. A few key takeaways from my journey so far:
+- **Theme Synchronization:** I initially struggled to keep my custom Tailwind colors perfectly synced with Mantine's UI components. I learned how to properly configure a dual-layer theme so that both libraries pull from the same design tokens.
+- **Complex UI State:** Building the custom multi-select combobox for the job filters taught me a lot about managing complex local state in React and handling edge cases (like keyboard navigation and dynamically removing tags).
+- **Component Reusability:** I realized early on that I was repeating code for the job cards and talent cards. Refactoring these into shared, reusable components in a `Components/` folder really cleaned up my architecture.
 
 ## 🗺 Development Roadmap
 
