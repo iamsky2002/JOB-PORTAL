@@ -128,8 +128,8 @@ src/
    ```
    Open `http://localhost:3000` to view it in the browser.
 
-## 🧠 Challenges & What I Learned
-Building this wasn't without its hurdles. A few key takeaways from my journey so far:
+## 🛠️ Development Challenges & Learnings So Far
+This project is still under active development. The notes below capture challenges encountered, fixes applied, and lessons learned during implementation. These are some challenges I faced and what they taught me.
 - **Theme Synchronization:** I initially struggled to keep my custom Tailwind colors perfectly synced with Mantine's UI components. I learned how to properly configure a dual-layer theme so that both libraries pull from the same design tokens.
 - **Complex UI State:** Building the custom multi-select combobox for the job filters taught me a lot about managing complex local state in React and handling edge cases (like keyboard navigation and dynamically removing tags).
 - **Component Reusability:** I realized early on that I was repeating code for the job cards and talent cards. Refactoring these into shared, reusable components in a `Components/` folder really cleaned up my architecture.
