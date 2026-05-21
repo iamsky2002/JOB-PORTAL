@@ -7,7 +7,6 @@ const PostJob = () => {
   const [skills, setSkills] = useState<string[]>([]);
   const [jobDescription, setJobDescription] = useState(content);
 
-  // Form input states
   const [jobTitle, setJobTitle] = useState("");
   const [company, setCompany] = useState("");
   const [experience, setExperience] = useState("");
@@ -33,7 +32,6 @@ const PostJob = () => {
       <div className="text-2xl font-bold text-mine-shaft-100 mb-6">Post a Job</div>
       <Grid>
         
-        {/* Job Title Select */}
         <Grid.Col span={{ base: 12, md: 6 }}>
           <Select
             label="Job Title"
@@ -44,7 +42,6 @@ const PostJob = () => {
           />
         </Grid.Col>
 
-        {/* Company Select */}
         <Grid.Col span={{ base: 12, md: 6 }}>
           <Select
             label="Company"
@@ -55,7 +52,6 @@ const PostJob = () => {
           />
         </Grid.Col>
 
-        {/* Experience Select */}
         <Grid.Col span={{ base: 12, md: 6 }}>
           <Select
             label="Experience"
@@ -66,7 +62,6 @@ const PostJob = () => {
           />
         </Grid.Col>
 
-        {/* Job Type Select */}
         <Grid.Col span={{ base: 12, md: 6 }}>
           <Select
             label="Job Type"
@@ -77,7 +72,6 @@ const PostJob = () => {
           />
         </Grid.Col>
 
-        {/* Location Select */}
         <Grid.Col span={{ base: 12, md: 6 }}>
           <Select
             label="Location"
@@ -88,7 +82,6 @@ const PostJob = () => {
           />
         </Grid.Col>
 
-        {/* Salary Select */}
         <Grid.Col span={{ base: 12, md: 6 }}>
           <Select
             label="Salary"
@@ -99,7 +92,6 @@ const PostJob = () => {
           />
         </Grid.Col>
 
-        {/* Skills input */}
         <Grid.Col span={12}>
           <TagsInput
             label="Skills Required"
@@ -110,7 +102,6 @@ const PostJob = () => {
           />
         </Grid.Col>
 
-        {/* Job Description input */}
         <Grid.Col span={12}>
           <Textarea
             label="Job Description"
@@ -121,7 +112,6 @@ const PostJob = () => {
           />
         </Grid.Col>
 
-        {/* Action Buttons */}
         <Grid.Col span={12} className="flex gap-4 mt-4">
           <Button color="bright-sun.4" onClick={handlePost}>
             Post Job

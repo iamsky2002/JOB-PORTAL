@@ -1,11 +1,7 @@
 import { TextInput, Avatar } from "@mantine/core";
 import { IconSearch } from "@tabler/icons-react";
 
-/**
- * DreamJob Component (Hero Section)
- * Displays the main landing page hero section including the search bar,
- * background images, floating statistics badges, and sample job cards.
- */
+// Main hero section with search bar and job stats
 const DreamJob = () => {
   return (
     <div className="flex items-center px-16 ">

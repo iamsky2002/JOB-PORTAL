@@ -1,8 +1,5 @@
-/**
- * Mock Data Storage
- * Contains arrays of data (companies, job categories, work items)
- * used throughout the application to render dynamic UI elements.
- */
+// Mock data for the app (companies, job categories, etc)
+// TODO: Replace with real API data later
 
 // TypeScript interfaces — these tell the compiler the exact shape of each data object
 interface JobCategory {

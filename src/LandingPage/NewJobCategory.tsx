@@ -1,8 +1,4 @@
-/**
- * NewJobCategory Component
- * Renders the "Explore Career Opportunities" section.
- * Displays a headline, a subtitle, and a grid of job category cards (e.g., Digital Marketing).
- */
+// Explore career opportunities section showing a grid of categories
 import { Carousel } from "@mantine/carousel";
 import { jobCategory } from "../Data/Data";
 const NewJobCategory = () => {

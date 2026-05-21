@@ -10,7 +10,6 @@ const SearchBar = () => {
   return (
     <div className="bg-mine-shaft-900 border-b border-mine-shaft-700 sticky top-0 z-10 shadow-md shadow-mine-shaft-950">
       <div className="flex items-center px-6 py-4 gap-3">
-        {/* Talent Name Input */}
         <div className="flex items-center bg-mine-shaft-800 border border-mine-shaft-600 rounded-xl px-2 py-2 flex-1 min-w-0 focus-within:border-bright-sun-400 transition-all duration-300">
           <div className="flex items-center gap-2">
             <IconUserCircle size={25} className="text-bright-sun-400" />
@@ -22,17 +21,14 @@ const SearchBar = () => {
             placeholder="Talent Name"
           />
         </div>
-        {/* 4 Dropdown Filters */}
         {searchFields.map((item, index) => (
           <div key={index} className="flex-1 min-w-0">
             <MultiInput {...item} />
           </div>
         ))}
 
-        {/* Divider */}
         <div className="h-10 w-px bg-mine-shaft-600 shrink-0" />
 
-        {/* Salary Range Slider */}
         <div className="flex flex-col gap-1 min-w-[180px] max-w-[220px]">
           <div className="flex justify-between items-center text-mine-shaft-300 text-xs font-medium px-1">
             <span>Salary</span>

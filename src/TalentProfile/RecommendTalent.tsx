@@ -4,9 +4,11 @@ import { IconMapPin, IconHeart } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 import { talents } from "../Data/TalentData";
 
+// Sidebar showing recommended candidates
 const RecommendTalent = (props: any) => {
   const { currentName } = props;
 
+  // Filter out current profile and show top 4
   const recommendedList = talents.filter((t: any) => t.name !== currentName).slice(0, 4);
 
   return (
@@ -23,11 +25,13 @@ const RecommendTalent = (props: any) => {
   );
 };
 
+// Small card component for recommended talent
 const RecommendCard = (talent: any) => {
   const [saved, setSaved] = useState(false);
 
   return (
     <div className="bg-mine-shaft-900 p-5 rounded-xl border border-mine-shaft-700 flex flex-col gap-3 hover:shadow-[0_0_5px_1px_yellow] !shadow-bright-sun-300 hover:border-bright-sun-400 transition-all duration-300 cursor-pointer">
+      
       <div className="flex justify-between items-start gap-3">
         <div className="flex gap-3 items-center">
           <Avatar src={`/${talent.image}.png`} alt={talent.name} size="md" className="rounded-full" />

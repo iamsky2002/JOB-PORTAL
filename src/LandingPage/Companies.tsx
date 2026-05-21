@@ -1,11 +1,7 @@
 import Marquee from "react-fast-marquee";
 import { companies } from "../Data/Data";
 
-/**
- * Companies Component
- * Displays a horizontal scrolling marquee of trusted company logos.
- * Imports 'companies' data array to dynamically render logo images.
- */
+// Scrolling list of trusted company logos
 const Companies = () => {
   return (
     <div className="mt-20 pb-5">

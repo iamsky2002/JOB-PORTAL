@@ -5,14 +5,12 @@ const JobCard = (props: any) => {
   return (
     <div className="bg-mine-shaft-900 p-4 w-72 rounded-xl border border-mine-shaft-700 flex flex-col gap-3 hover:shadow-[0_0_5px_1px_yellow] !shadow-bright-sun-300 hover:border-bright-sun-400 transition-all duration-300 cursor-pointer">
 
-      {/* Top: Tags row */}
       <div className="flex flex-wrap gap-2 [&>div]:py-1 [&>div]:px-2 [&>div]:bg-mine-shaft-800 [&>div]:text-bright-sun-400 [&>div]:rounded-lg text-xs">
         <div>{props.experience}</div>
         <div>{props.jobType}</div>
         <div>{props.location}</div>
       </div>
 
-      {/* Middle: Logo + Title + Bookmark */}
       <div className="flex justify-between items-start">
         <div className="flex gap-3 items-center">
           <div className="p-2 bg-mine-shaft-800 rounded-md shrink-0">
@@ -28,14 +26,12 @@ const JobCard = (props: any) => {
         <IconBookmark className="text-mine-shaft-300 cursor-pointer hover:text-bright-sun-400 transition-colors shrink-0 mt-1" />
       </div>
 
-      {/* Description */}
       <Text className="!text-xs text-justify !text-mine-shaft-300" lineClamp={3}>
         {props.description}
       </Text>
 
       <Divider size="xs" color="mine-shaft.7" />
 
-      {/* Footer: Package + Posted */}
       <div className="flex justify-between items-center">
         <div className="font-bold text-bright-sun-400">&#8377;{props.package}</div>
         <div className="flex gap-1 text-xs text-mine-shaft-400 items-center">
