@@ -151,3 +151,6 @@ Building this wasn't without its hurdles. A few key takeaways from my journey so
 ### 👤 Built By
 **Sumit (SKY)**
 [![GitHub](https://img.shields.io/badge/GitHub-iamsky2002-181717?style=for-the-badge&logo=github)](https://github.com/iamsky2002)
+
+> *"The only way to do great work is to love what you do."*
+> *"Continuous improvement is better than delayed perfection."*
