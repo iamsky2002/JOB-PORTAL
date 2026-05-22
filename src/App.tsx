@@ -1,4 +1,4 @@
-import { MantineProvider, createTheme } from "@mantine/core";
+import { Divider, MantineProvider, createTheme } from "@mantine/core";
 import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
 import HomePage from "./Pages/HomePage";
@@ -75,13 +75,14 @@ function App() {
       <BrowserRouter>
         <div className="min-h-[100vh] bg-mine-shaft-950 font-[Poppins] flex flex-col relative">
           <Header />
+          <Divider size="xs" mx="md" />
 
           <div className="flex-grow">
             <Routes>
               <Route path="/find-jobs" element={<FindJobs />} />
               <Route path="/find-talent" element={<FindTalentPage />} />
               <Route path="/talent-profile" element={<TalentProfilePage />} />
-              <Route path="/upload-job" element={<PostJobPage />} />
+              <Route path="/post-job" element={<PostJobPage />} />
               <Route path="*" element={<HomePage />} />
             </Routes>
           </div>

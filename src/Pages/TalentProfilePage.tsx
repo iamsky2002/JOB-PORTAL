@@ -11,7 +11,7 @@ const TalentProfilePage = () => {
 
   return (
     <div className="min-h-[90vh] bg-mine-shaft-950 font-['poppins'] p-6">
-      <Divider size="xs" />
+
 
       <Link className="my-5 inline-block" to="/find-talent">
         <Button
