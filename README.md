@@ -11,24 +11,22 @@
 
 <br/>
 
-A job board where candidates can search and apply for jobs, and recruiters can post jobs and find talent. The plan is a full-stack app (React + Spring Boot + MongoDB); I'm building it in stages and right now the frontend is done.
+A job board where candidates can search for jobs and recruiters can post jobs and browse talent. I'm building it as a full-stack app, one piece at a time. The frontend is done; the backend is what I'm working on next.
 
-**Status:** Frontend done ✅ · Backend in progress 🔨 (frontend runs on mock data for now)
+**Status:** Frontend done ✅ · Backend coming next 🔨 (the frontend runs on mock data for now)
 
 </div>
 
 ---
 
 ## 💡 Why I Built This
-I wanted to work on something bigger than the usual to-do app — a real, full-stack product with a lot of moving parts. A job portal was a good pick because it has search, filters, profiles, a post-job form, auth, notifications… so it pushes me to think about component structure, reusing code, and (later) how the frontend talks to a backend.
+I've mostly made small practice apps before, so I wanted to try something bigger that feels closer to a real product. A job portal was a good fit because it has a lot of different parts — search, filters, profiles, forms — so I get to practice structuring a bigger React app and reusing components instead of repeating myself.
 
-I'm building it from a product backlog (user stories for candidates and employers), and I didn't want it to look like a default template, so I spent time on a custom dark theme that stays consistent across Tailwind and Mantine.
-
-I'm building it in stages: first the full frontend on mock data, then the Spring Boot + MongoDB backend, then wiring them together with auth and notifications.
+I'm building it from a product backlog (user stories for candidates and employers) and going through it step by step. Right now everything runs on mock data, and the Spring Boot + MongoDB backend is the next thing I'm picking up.
 
 ## 🛠 Tech Stack
 
-| Frontend (done) | Backend & State (in progress) |
+| Frontend (done) | Backend & State (coming next) |
 | --- | --- |
 | React 19 + TypeScript | Java / Spring Boot |
 | Tailwind CSS | MongoDB |
@@ -62,7 +60,7 @@ I'm building it in stages: first the full frontend on mock data, then the Spring
 
 ### 📝 Post a Job (`/post-job`)
 - Form to post a new job — title, company, experience, job type, location, salary, skills and description.
-- For now it logs the form data to the console (no backend yet).
+- For now it just logs the form data to the console (no backend yet).
 
 ### 🧭 Navigation
 - Header with active-route highlighting and a notification bell.
@@ -72,7 +70,7 @@ I'm building it in stages: first the full frontend on mock data, then the Spring
 
 ## 🎨 Theming
 
-The whole app uses a custom dark theme. The tricky part was keeping the same colors in sync between Tailwind classes and Mantine's color props, so both pull from the same palette (`mine-shaft` for surfaces, `bright-sun` for the accent), with Poppins as the font.
+The whole app uses a custom dark theme. The annoying part was getting Tailwind and Mantine to use the same colors — they each have their own setup. I fixed it by keeping one palette (`mine-shaft` for backgrounds, `bright-sun` for the accent) in both, with Poppins as the font.
 
 **tailwind.config.js:**
 ```javascript
@@ -130,15 +128,15 @@ src/
    Then open `http://localhost:3000`.
 
 ## 🛠️ Things I Ran Into (and Learned)
-This is still under active development, so these are some of the problems I hit and how I sorted them out:
+The project is still in progress, so here are a few things that didn't work the first time and how I figured them out:
 
-- **Keeping two themes in sync** — at first my Tailwind colors and Mantine's colors didn't match up. I fixed it by defining the same palette in both places so they pull from the same tokens.
-- **The custom multi-select input** — building the multi-select for the filters taught me a lot about handling local state in React, especially the edge cases like adding and removing tags.
-- **Repeating myself** — early on I had almost the same code for job cards and talent cards. Pulling the shared bits into a `Components/` folder made things much easier to manage.
+- **Two themes not matching** — Tailwind and Mantine each have their own color setup, so my custom colors only showed up in one of them. I fixed it by adding the same `mine-shaft` / `bright-sun` palette to both `tailwind.config.js` and the Mantine theme, so the whole app uses one set of colors.
+- **The custom multi-select filter** — I built the tag-style multi-select myself instead of using a library. Getting the add/remove tags and the dropdown to behave taught me a lot about handling state in React.
+- **Too much repeated code** — my job card and talent card were almost the same copy-pasted code. I moved the common parts into a `Components/` folder so I only have to change things in one place now.
 
 ## 🗺 Roadmap
 
-I'm working from a product backlog with user stories for both candidates and employers. Big picture:
+I'm working from a product backlog with user stories for both candidates and employers. The bigger picture:
 
 **Frontend**
 - [x] Landing page + responsive sections
