@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="w-1/4 flex flex-col gap-4">
         <div className="flex gap-1 items-center text-bright-sun-400">
           <IconChefHatFilled className="h-6 w-6" stroke={2.5} />
-          <div className="text-xl font-semibold">JobHook</div>
+          <div className="text-xl font-semibold">Web Job Portal</div>
         </div>
         <div className="text-sm text-mine-shaft-300">
           Job portal with user profiles, skill updates, certifications, work
