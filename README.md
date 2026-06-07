@@ -2,78 +2,89 @@
 
 # 💼 Web Job Portal
 
-**A Full Stack Job Portal Web Application built with React, Spring Boot, MongoDB, and Redux.**
+**A job portal web app I'm building with React and TypeScript.**
 
 [![React](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
-[![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)](https://spring.io/projects/spring-boot)
-[![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Mantine](https://img.shields.io/badge/Mantine-9.1-339AF0?style=for-the-badge&logo=mantine&logoColor=white)](https://mantine.dev/)
 
 <br/>
 
-A responsive job board where candidates can find jobs and employers can find talent. Features a clean dark theme and modular components.
+A job board where candidates can search for jobs and recruiters can post jobs and find talent. Dark theme, reusable components, and everything is wired up on the frontend.
 
-**Status:** Frontend Completed | Backend In Progress
+**Status:** Frontend done · Backend not started yet (running on mock data for now)
 
 </div>
 
 ---
 
 ## 💡 Why I Built This
-I built this project to challenge myself with a full-stack application that goes beyond a simple CRUD app. I wanted to learn how to properly structure a React frontend with a premium UI (mixing Tailwind and Mantine) and connect it to a robust Java Spring Boot backend. My goal was to build something that looks and feels like a real product that users would actually want to interact with.
+I wanted to work on something bigger than the usual to-do app or a basic CRUD project. A job portal felt like a good pick because it has a lot of moving parts — search, filters, profiles, a post-job form — so it forced me to actually think about how to structure components and reuse them instead of copy-pasting the same card three times.
 
-## ⚡ Project Highlights
-- **React 19 & TypeScript**: Built with functional components, hooks, and static typing.
-- **Dark Mode UI**: Custom design using Tailwind CSS and Mantine UI components.
-- **Modular Components**: Reusable UI elements like custom dropdowns, sliders, and cards.
-- **Routing**: Client-side routing with React Router for seamless navigation.
+I also didn't want it to look like a default template, so I spent a fair bit of time getting a custom dark theme to work nicely across both Tailwind and Mantine.
+
+The backend (Spring Boot + MongoDB) is the next thing I'm planning to pick up. Right now everything runs on mock data.
+
+## ⚡ What I Used
+- **React 19 + TypeScript** — functional components, hooks, and typed props/data.
+- **Dark theme UI** — built with Tailwind CSS and Mantine components.
+- **Reusable components** — shared cards, a custom multi-select input, dropdowns, etc.
+- **Client-side routing** — handled with React Router.
 
 ## 🖥️ What's Built So Far (Frontend)
 
 ### 🏠 Home Page (`/`)
-- **Hero Section**: Search inputs and dynamic UI elements.
-- **Company Marquee**: Auto-scrolling logos using `react-fast-marquee`.
-- **Career Categories**: Embla-powered carousel for browsing job fields.
-- **How It Works**: Step-by-step visual guide.
-- **Testimonials & Subscribe**: User reviews and email newsletter CTA.
+- **Hero section** with the search inputs.
+- **Company marquee** — auto-scrolling logos using `react-fast-marquee`.
+- **Job categories** — a carousel built with Embla.
+- **How It Works** section with a simple step-by-step layout.
+- **Testimonials** and a newsletter **Subscribe** block.
 
 ### 🔍 Find Jobs (`/find-jobs`)
-- Search and filter bar (Job Title, Location, Experience) using a custom multi-select combobox.
+- Search and filter bar (Job Title, Location, Experience) using a custom multi-select input.
 - Salary range slider.
-- Grid of job listings with sorting options (Relevance, Recent, Salary).
+- Grid of job cards with sorting (Relevance, Recent, Salary).
 
 ### 🎯 Find Talent (`/find-talent`)
-- Candidate browsing page with search filters (Title, Location, Skills).
-- Talent grid showing candidate cards with skills and expected CTC.
+- Candidate browsing page with filters (Title, Location, Skills).
+- Grid of talent cards showing skills and expected CTC.
 
-### 👤 Candidate Profile (`/talent-profile`)
-- Interactive profile view with dynamic experience and certifications lists.
-- Clickable "save" heart toggle on profiles.
+### 👤 Talent Profile (`/talent-profile`)
+- Profile view with experience and certification lists.
+- A "save" heart toggle.
+- A "recommended talent" section at the bottom.
+
+### 📝 Post a Job (`/post-job`)
+- Form to post a new job — title, company, experience, job type, location, salary, skills and description.
+- For now it just logs the form data to the console (no backend yet).
 
 ### 🧭 Navigation
-- Header with active-route highlighting and notification bell.
-- Footer with responsive link columns and social icons.
+- Header with active-route highlighting and a notification bell.
+- Footer with link columns and social icons.
+
+> **Note:** there's also a Job Description page (`JobDescPage.tsx`) that's still a work in progress — it isn't wired into the routes yet.
 
 ## 🛠 Tech Stack
 
-**Frontend:**
-- React (v19)
+**Frontend (done):**
+- React 19
 - TypeScript
 - Tailwind CSS
 - Mantine UI
 - React Router DOM
-- Tabler Icons React
+- Tabler Icons
+- Embla Carousel + react-fast-marquee
 
-**Backend (In Progress):**
+**Backend (planned, not started):**
 - Java / Spring Boot
 - MongoDB
-- Spring Security + JWT for Auth
-- RESTful APIs
+- Spring Security + JWT for auth
+- REST APIs
 
 ## 🎨 Theming
 
-The project uses a custom dark theme across Tailwind and Mantine.
+The whole app uses a custom dark theme. The tricky part was keeping the same colors in sync between Tailwind classes and Mantine's color props, so both pull from the same palette.
 
 **tailwind.config.js:**
 ```javascript
@@ -95,26 +106,28 @@ theme: {
 }
 ```
 
-## 📁 Project Structure (Overview)
+## 📁 Project Structure
 
 ```
 src/
-├── Components/    # Shared reusable components (e.g., MultiInput)
-├── Pages/         # Main route pages (Home, FindJobs, FindTalent)
-├── LandingPage/   # Components for the home page sections
-├── FindJobs/      # Job search specific components
-├── FindTalent/    # Talent search specific components
-├── Header/        # Navigation components
-├── Footer/        # Footer components
-└── Data/          # Mock data and TypeScript interfaces
+├── Components/      # Shared reusable components (e.g. MultiInput)
+├── Pages/           # Route pages (Home, FindJobs, FindTalent, PostJob, etc.)
+├── LandingPage/     # Home page sections (Hero, Companies, Testimonials...)
+├── FindJobs/        # Job search components (JobCard, SearchBar, Sort)
+├── FindTalent/      # Talent search components (TalentCard, SearchBar)
+├── TalentProfile/   # Profile, Experience, Certification, Recommend cards
+├── PostJob/         # Post-a-job form components
+├── Header/          # Navigation components
+├── Footer/          # Footer components
+└── Data/            # Mock data and TypeScript interfaces
 ```
 
-## 🚀 Quick Start
+## 🚀 Getting Started
 
-1. **Clone the repository**
+1. **Clone the repo**
    ```bash
    git clone https://github.com/iamsky2002/JOB-PORTAL.git
-   cd job-portal
+   cd JOB-PORTAL
    ```
 
 2. **Install dependencies**
@@ -122,35 +135,36 @@ src/
    npm install
    ```
 
-3. **Start the development server**
+3. **Start the dev server**
    ```bash
    npm start
    ```
-   Open `http://localhost:3000` to view it in the browser.
+   Then open `http://localhost:3000`.
 
-## 🛠️ Development Challenges & Learnings So Far
-This project is still under active development. The notes below capture challenges encountered, fixes applied, and lessons learned during implementation. These are some challenges I faced and what they taught me.
-- **Theme Synchronization:** I initially struggled to keep my custom Tailwind colors perfectly synced with Mantine's UI components. I learned how to properly configure a dual-layer theme so that both libraries pull from the same design tokens.
-- **Complex UI State:** Building the custom multi-select combobox for the job filters taught me a lot about managing complex local state in React and handling edge cases (like keyboard navigation and dynamically removing tags).
-- **Component Reusability:** I realized early on that I was repeating code for the job cards and talent cards. Refactoring these into shared, reusable components in a `Components/` folder really cleaned up my architecture.
+## 🛠️ Things I Ran Into (and Learned)
+This is still under active development, so these are some of the problems I hit and how I sorted them out:
 
-## 🗺 Development Roadmap
+- **Keeping two themes in sync** — at first my Tailwind colors and Mantine's colors didn't match up. I fixed it by defining the same palette in both places so they pull from the same tokens.
+- **The custom multi-select input** — building the multi-select for the filters taught me a lot about handling local state in React, especially the edge cases like adding and removing tags.
+- **Repeating myself** — early on I had almost the same code for job cards and talent cards. Pulling the shared bits into a `Components/` folder made things much easier to manage.
 
-- [x] Complete frontend UI and responsive design
-- [x] Implement routing and navigation
-- [x] Create mock data structures for testing UI
-- [ ] Set up Spring Boot backend project
-- [ ] Connect MongoDB and design schemas
-- [ ] Implement REST APIs for jobs and users
-- [ ] Connect frontend to APIs (replace mock data)
-- [ ] Implement JWT Authentication
-- [ ] Deploy application
+## 🗺 Roadmap
+
+- [x] Frontend UI and responsive design
+- [x] Routing and navigation
+- [x] Mock data to test the UI
+- [x] Post a Job form (frontend only)
+- [ ] Wire up the Job Description page
+- [ ] Set up the Spring Boot backend
+- [ ] Connect MongoDB and design the schemas
+- [ ] Build REST APIs for jobs and users
+- [ ] Replace mock data with real API calls
+- [ ] Add JWT authentication
+- [ ] Deploy
 
 ---
 
 ### 👤 Built By
 **Sumit (SKY)**
-[![GitHub](https://img.shields.io/badge/GitHub-iamsky2002-181717?style=for-the-badge&logo=github)](https://github.com/iamsky2002)
 
-> *"The only way to do great work is to love what you do."*
-> *"Continuous improvement is better than delayed perfection."*
+[![GitHub](https://img.shields.io/badge/GitHub-iamsky2002-181717?style=for-the-badge&logo=github)](https://github.com/iamsky2002)
