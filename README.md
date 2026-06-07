@@ -19,6 +19,20 @@ A job board where candidates can search for jobs and recruiters can post jobs an
 
 ---
 
+## 🖼️ Screenshots
+
+**Home**
+
+![Home page](screenshots/01-home.png)
+
+| Find Jobs | Find Talent |
+| --- | --- |
+| ![Find Jobs](screenshots/02-find-jobs.png) | ![Find Talent](screenshots/03-find-talent.png) |
+
+| Talent Profile | Post a Job |
+| --- | --- |
+| ![Talent Profile](screenshots/04-talent-profile.png) | ![Post a Job](screenshots/05-post-job.png) |
+
 ## 💡 Why I Built This
 I've mostly made small practice apps before, so I wanted to try something bigger that feels closer to a real product. A job portal was a good fit because it has a lot of different parts — search, filters, profiles, forms — so I get to practice structuring a bigger React app and reusing components instead of repeating myself.
 
